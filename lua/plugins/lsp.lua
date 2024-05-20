@@ -4,8 +4,6 @@ return {
     codelens = { enabled = true },
     servers = {
       lua_ls = {},
-      taplo = {},
-      clangd = {},
       nixd = {},
     },
   },
