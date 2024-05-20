@@ -8,7 +8,6 @@ return {
       javascript = { "clang-format" },
       json = { "clang-format" },
       lua = { "stylua" },
-      nix = { "alejandra" },
       python = { "isort", "lack" },
       rust = { "rustfmt" },
     },
