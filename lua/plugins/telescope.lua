@@ -1,6 +1,8 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
+    { "<leader>fd", require("lazyvim.util").telescope("find_files", { cwd = "~/.dotfiles" }), desc = "Find Dotfiles" },
+    { "<leader>sd", require("lazyvim.util").telescope("live_grep", { cwd = "~/.dotfiles" }), desc = "Grep Dotfiles" },
     -- prevent builtin colors from being displayed in the picker
     {
       "<leader>uC",
