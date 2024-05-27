@@ -9,7 +9,6 @@ return {
       json = { "clang-format" },
       lua = { "stylua" },
       python = { "isort", "lack" },
-      rust = { "rustfmt" },
     },
   },
 }
