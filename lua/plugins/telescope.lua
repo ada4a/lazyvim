@@ -1,10 +1,8 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    -- TODO replace with LazyVim.pick() when I learn how to
-    -- https://github.com/LazyVim/LazyVim/discussions/3581
-    { "<leader>fd", LazyVim.telescope("find_files", { cwd = "~/.dotfiles" }), desc = "Find Dotfiles" },
-    { "<leader>sd", LazyVim.telescope("live_grep", { cwd = "~/.dotfiles" }), desc = "Grep Dotfiles" },
+    { "<leader>fd", LazyVim.pick("auto", { cwd = "~/.dotfiles" }), desc = "Find Dotfiles" },
+    { "<leader>sd", LazyVim.pick("live_grep", { cwd = "~/.dotfiles" }), desc = "Grep Dotfiles" },
     -- prevent builtin colors from being displayed in the picker
     {
       "<leader>uC",
@@ -23,7 +21,7 @@ return {
           end, target("", "color"))
         end
 
-        LazyVim.telescope("colorscheme", { enable_preview = true })()
+        LazyVim.pick("colorscheme", { enable_preview = true })()
         vim.fn.getcompletion = target
       end,
       desc = "Colorscheme with Preview",

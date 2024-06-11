@@ -3,7 +3,7 @@ return {
   "nvimdev/dashboard-nvim",
   opts = function(_, opts)
     local dotfiles = {
-      action = LazyVim.telescope("find_files", { cwd = "~/.dotfiles" }),
+      action = LazyVim.pick("auto", { cwd = "~/.dotfiles" }),
       desc = " Dotfiles",
       icon = " ",
       key = "d",
