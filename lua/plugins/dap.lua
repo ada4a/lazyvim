@@ -3,9 +3,9 @@ return {
   "mfussenegger/nvim-dap",
   -- stylua: ignore
   keys = {
-    {"<F5>",  function() dap.continue() end,  desc = "Continue"},
-    {"<F10>", function() dap.step_over() end, desc = "Step Over"},
-    {"<F11>", function() dap.step_into() end, desc = "Step Into"},
-    {"<F12>", function() dap.step_out() end,  desc = "Step Out"}
+    {"<F5>",  dap.continue,  desc = "Continue"},
+    {"<F10>", dap.step_over, desc = "Step Over"},
+    {"<F11>", dap.step_into, desc = "Step Into"},
+    {"<F12>", dap.step_out,  desc = "Step Out"}
   },
 }
