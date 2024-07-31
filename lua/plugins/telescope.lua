@@ -43,7 +43,7 @@ return {
   opts = {
     extensions = {
       project = { base_dirs = {
-        { path = "~/Code", max_depth = 4 },
+        { path = "~/dev", max_depth = 4 },
         { path = "~/.dotfiles" },
       } },
     },
