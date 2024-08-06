@@ -4,8 +4,10 @@ return {
     { "<leader>fd", LazyVim.pick("auto", { cwd = "~/.dotfiles" }), desc = "Find Dotfiles" },
     { "<leader>sd", LazyVim.pick("live_grep", { cwd = "~/.dotfiles" }), desc = "Grep Dotfiles" },
     -- prevent builtin colors from being displayed in the picker
+    -- also use "<leader>uc" instead of "<leader>uC" (<leader>uc remapped in keymaps.lua)
+    { "<leader>uC", false },
     {
-      "<leader>uC",
+      "<leader>uc",
       function()
         -- stylua: ignore
         local builtins = { "zellner", "torte", "slate", "shine", "ron", "quiet", "peachpuff",
