@@ -35,10 +35,10 @@ return {
       -- because otherwise the plugin loading order gets messed up or something
       -- https://github.com/LazyVim/LazyVim/issues/283#issuecomment-1433390326
       { "<C-p>", "<cmd>lua require('telescope').extensions.project.project{}<cr>", desc = "Telescope Project" },
-      config = function()
-        require("telescope").load_extension("project")
-      end,
     },
+    config = function()
+      require("telescope").load_extension("project")
+    end,
   },
   opts = {
     extensions = {
