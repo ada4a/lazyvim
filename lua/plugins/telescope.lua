@@ -3,29 +3,10 @@ return {
   keys = {
     { "<leader>fd", LazyVim.pick("auto", { cwd = "~/.dotfiles" }), desc = "Find Dotfiles" },
     { "<leader>sd", LazyVim.pick("live_grep", { cwd = "~/.dotfiles" }), desc = "Grep Dotfiles" },
-    -- prevent builtin colors from being displayed in the picker
-    -- also use "<leader>uc" instead of "<leader>uC" (<leader>uc remapped in keymaps.lua)
     { "<leader>uC", false },
     {
       "<leader>uc",
-      function()
-        -- stylua: ignore
-        local builtins = { "zellner", "torte", "slate", "shine", "ron", "quiet", "peachpuff",
-          "pablo", "murphy", "lunaperche", "koehler", "industry", "evening", "elflord",
-          "desert", "delek", "default", "darkblue", "blue", "morning"}
-
-        local target = vim.fn.getcompletion
-
-        ---@diagnostic disable-next-line: duplicate-set-field
-        vim.fn.getcompletion = function()
-          return vim.tbl_filter(function(color)
-            return not vim.tbl_contains(builtins, color)
-          end, target("", "color"))
-        end
-
-        LazyVim.pick("colorscheme", { enable_preview = true })()
-        vim.fn.getcompletion = target
-      end,
+      LazyVim.pick("colorscheme", { enable_preview = true, ignore_builtins = true }),
       desc = "Colorscheme with Preview",
     },
   },
