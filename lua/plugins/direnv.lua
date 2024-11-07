@@ -42,4 +42,12 @@ return {
       },
     },
   },
+
+  {
+    "Julian/lean.nvim",
+
+    opts = {
+      lsp = { autostart = false },
+    },
+  },
 }
