@@ -146,12 +146,23 @@ return {
         -- not need to require("jdtls.setup").add_commands(), start automatically adds commands
       end
 
-      -- Attach the jdtls for each java buffer. HOWEVER, this plugin loads
-      -- depending on filetype, so this autocmd doesn't run for the first file.
-      -- For that, we call directly below.
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = java_filetypes,
-        callback = attach_jdtls,
+      vim.api.nvim_create_autocmd("User", {
+        group = "direnv-nvim",
+        pattern = { "DirenvReady", "DirenvNotFound" },
+        callback = function()
+          local contains = function(ls, item)
+            for _, ft in ipairs(ls) do
+              if ft == item then
+                return true
+              end
+            end
+            return false
+          end
+          if contains(java_filetypes, vim.bo.filetype) then
+            attach_jdtls()
+          end
+        end,
+        once = true,
       })
 
       -- Setup keymap and dap after the lsp is fully attached.
@@ -241,9 +252,6 @@ return {
           end
         end,
       })
-
-      -- Avoid race condition by calling attach the first time, since the autocmd won't fire.
-      attach_jdtls()
     end,
   },
 
