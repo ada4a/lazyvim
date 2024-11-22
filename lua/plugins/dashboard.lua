@@ -1,17 +1,17 @@
--- Stolen from http://www.lazyvim.org/extras/util/project#dashboard-nvim-optional
 return {
-  "nvimdev/dashboard-nvim",
-  opts = function(_, opts)
-    local dotfiles = {
-      action = LazyVim.pick("auto", { cwd = "~/.dotfiles" }),
-      desc = " Dotfiles",
-      icon = " ",
-      key = "d",
-    }
-
-    dotfiles.desc = dotfiles.desc .. string.rep(" ", 43 - #dotfiles.desc)
-    dotfiles.key_format = "  %s"
-
-    table.insert(opts.config.center, 3, dotfiles)
-  end,
+  "folke/snacks.nvim",
+  opts = {
+    dashboard = {
+      preset = {
+        keys = {
+          {
+            icon = " ",
+            key = "d",
+            desc = " Dotfiles",
+            action = ":lua Snacks.dashboard.pick('files', { cwd = '~/.dotfiles' })",
+          },
+        },
+      },
+    },
+  },
 }
