@@ -255,6 +255,7 @@ return {
     end,
   },
 
+  -- My config
   {
     "folke/noice.nvim",
     opts = {
@@ -271,7 +272,6 @@ return {
     },
   },
 
-  -- My config
   {
     "stevearc/conform.nvim",
     opts = { formatters_by_ft = { java = { "google-java-format" } } },
