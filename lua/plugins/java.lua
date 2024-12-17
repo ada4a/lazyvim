@@ -1,3 +1,7 @@
+-- NOTE: the following is just a vendored version of
+-- https://github.com/LazyVim/LazyVim/blob/1599187175eca74da52e94d7d65a1e08bcedccd9/lua/lazyvim/plugins/extras/lang/java.lua
+-- with ~~mason_registry disabled~~ and the autocommand changed to work with direnv.nvim
+
 -- This is the same as in lspconfig.configs.jdtls, but avoids
 -- needing to require that when this module loads.
 local java_filetypes = { "java" }
