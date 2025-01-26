@@ -20,7 +20,7 @@ return {
             pattern = { "DirenvReady", "DirenvNotFound" },
             callback = function()
               if vim.bo.filetype == "rust" then
-                require("rustaceanvim.lsp").start(bufnr)
+                pcall(require("rustaceanvim.lsp").start, bufnr)
               end
             end,
             once = true,
