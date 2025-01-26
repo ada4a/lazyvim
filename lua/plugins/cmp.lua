@@ -6,6 +6,11 @@ return {
       ["<Down>"] = {},
     },
     completion = {
+      list = {
+        selection = {
+          auto_insert = false,
+        },
+      },
       ghost_text = {
         enabled = false,
       },
