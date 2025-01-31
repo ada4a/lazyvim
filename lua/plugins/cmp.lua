@@ -4,6 +4,7 @@ return {
     keymap = {
       ["<Up>"] = {},
       ["<Down>"] = {},
+      ["<CR>"] = {},
     },
     completion = {
       list = {
