@@ -28,3 +28,17 @@ Snacks.toggle
     end,
   })
   :map("<leader>ub")
+
+local map = vim.keymap.set
+
+local gs = package.loaded.gitsigns
+
+map("n", "<leader>gdm", function()
+  gs.change_base("main")
+  vim.cmd.Neotree("main")
+end, { desc = "Change diff base to `main`" })
+
+map("n", "<leader>gdh", function()
+  gs.change_base("HEAD^")
+  vim.cmd.Neotree("git_base=HEAD^")
+end, { desc = "Change diff base to last commit" })
