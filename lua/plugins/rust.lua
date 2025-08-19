@@ -3,6 +3,8 @@ return {
   { "stevearc/conform.nvim", opts = { rust = { "rustfmt" } } },
   {
     "mrcjkb/rustaceanvim",
+
+    default_settings = { ["rust-analyzer"] = { rustcSource = "discover" } },
     -- stylua: ignore
     keys = {
       {"<leader>cm",  group = "move item"},
