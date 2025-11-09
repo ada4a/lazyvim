@@ -1,5 +1,6 @@
-return { "echasnovski/mini.pairs",
- opts = {
+return {
+  "nvim-mini/mini.pairs",
+  opts = {
     mappings = {
       -- disable everything lol
 
@@ -10,5 +11,5 @@ return { "echasnovski/mini.pairs",
       ["["] = false,
       ["{"] = false,
     },
-  }
- }
+  },
+}
