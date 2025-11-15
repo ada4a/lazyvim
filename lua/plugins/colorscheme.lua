@@ -1,5 +1,6 @@
 return {
-  { "LazyVim/LazyVim", colorscheme = "rose-pine" },
+  { "folke/tokyonight.nvim", enabled = false },
+  { "catppuccin/nvim", enabled = false },
   { "EdenEast/nightfox.nvim" },
   { "rose-pine/neovim" },
 }
