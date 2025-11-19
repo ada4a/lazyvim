@@ -4,10 +4,13 @@ return {
   {
     "mrcjkb/rustaceanvim",
 
-    default_settings = { ["rust-analyzer"] = {
-      assist = { preferSelf = true },
-      rustc = { source = "discover" },
-    } },
+    default_settings = {
+      ["rust-analyzer"] = {
+        assist = { preferSelf = true },
+        completion = { callable = { snippets = false } },
+        rustc = { source = "discover" },
+      },
+    },
     -- stylua: ignore
     keys = {
       {"<leader>cm",  group = "move item"},
